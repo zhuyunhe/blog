@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="commons/bootstrap/css/bootstrap.min.css">
+
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet" href="commons/bootstrap/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="modules/login/css/signin.css">
+
+
+<script type="text/javascript" src="commons/jquery/jquery.js"></script>
+<script type="text/javascript" src="commons/bootstrap/js/bootstrap.min.js"></script>
+<title>登陆</title>
+</head>
+<body>
+	<div class="container">
+      <form class="form-signin" action="LoginServlet" method="get">
+        <h2 class="form-signin-heading">Welcome~</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input id="username" name="username" class="form-control" placeholder="用户名" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="密码" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div>
+</body>
+</html>
