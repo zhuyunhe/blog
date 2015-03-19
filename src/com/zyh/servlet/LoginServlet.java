@@ -30,22 +30,21 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 	
+	        //request.setCharacterEncoding("GBK");
 		 	String username = request.getParameter("username");
 		 	String password = request.getParameter("password");
-		 	
-		 	//获得session
-		 	HttpSession session = request.getSession();
-
-		 	//把用户名放入session中
-		 	session.setAttribute("username", username);
-		 	if(username.equals("zhuyunhe") && password.equals("123456")){
-		 		
-		 		//重定向到主页
-		 		response.sendRedirect("modules/homepage/homepage.html");
-		 		
-		 	} else{
-		 		//重定向到登陆页
-		 		response.sendRedirect("modules/login/loginPage.html");
+		
+		 	if(username !=null && password != null){
+    		 	if(username.equals("zhuyunhe") && password.equals("123456")){
+    		 		
+    		 		//重定向到主页
+    		 		//response.sendRedirect("modules/homepage/homepage.html");
+    		 		request.getRequestDispatcher("modules/homepage/homepage.jsp").forward(request, response);
+    		 	
+    		 	} else{
+    		 		//重定向到登陆页
+    		 		response.sendRedirect("modules/login/loginPage.html");
+    		 	}
 		 	}
 	}
 
