@@ -37,9 +37,11 @@ public class LoginServlet extends HttpServlet {
 		 	if(username !=null && password != null){
     		 	if(username.equals("zhuyunhe") && password.equals("123456")){
     		 		
+    		 	    HttpSession session = request.getSession();
+    		 	    session.setAttribute("username", username);
     		 		//重定向到主页
-    		 		//response.sendRedirect("modules/homepage/homepage.html");
-    		 		request.getRequestDispatcher("modules/homepage/homepage.jsp").forward(request, response);
+    		 		response.sendRedirect("modules/homepage/homepage.html");
+    		 		//request.getRequestDispatcher("modules/homepage/homepage.jsp").forward(request, response);
     		 	
     		 	} else{
     		 		//重定向到登陆页
